@@ -33,17 +33,24 @@
 
 	& a {
 		color: c.$color-gray-light;
+
+		&:hover {
+			filter: invert(48%) sepia(82%) saturate(2902%) hue-rotate(340deg)
+				brightness(100%) contrast(91%);
+		}
 	}
 
 	&__form {
 		display: flex;
-		justify-content: space-around;
+		gap: 8px;
 	}
 
-	&__email {
-		font-size: 0.8rem;
+	&__input {
+		font-size: 0.9rem;
 		padding: 0.8rem 1rem;
 		border-radius: 50px;
+		border: none;
+		outline: none;
 	}
 
 	&__button {
@@ -51,7 +58,12 @@
 		font-size: 0.8rem;
 	}
 
-	&__social {
+	&__icon {
+		margin-right: 8px;
+
+		&:hover {
+			color: c.$color-primary;
+		}
 	}
 
 	&__copyright {
