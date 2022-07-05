@@ -1,0 +1,70 @@
+@use "../global/colors" as c;
+@use "../util/mixins" as m;
+
+.footer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	align-items: center;
+
+	margin: 0 auto;
+	padding: 4rem 10rem;
+	width: auto;
+	background: c.$color-blue-dark;
+
+	&__logo {
+		grid-column: 1 / 2;
+		grid-row: 1/2;
+		filter: brightness(0) invert(1);
+	}
+
+	&__nav1 {
+		grid-column: 2 /3;
+		grid-row: 1/3;
+		line-height: 2;
+	}
+
+	&__nav2 {
+		align-self: flex-start;
+		grid-column: 3 /4;
+		grid-row: 1/3;
+		line-height: 2;
+	}
+
+	& a {
+		color: c.$color-gray-light;
+	}
+
+	&__form {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	&__email {
+		font-size: 0.8rem;
+		padding: 0.8rem 1rem;
+		border-radius: 50px;
+	}
+
+	&__button {
+		@include m.button;
+		font-size: 0.8rem;
+	}
+
+	&__social {
+	}
+
+	&__copyright {
+		color: c.$color-gray-dark;
+		font-size: 0.7rem;
+		text-align: end;
+	}
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}

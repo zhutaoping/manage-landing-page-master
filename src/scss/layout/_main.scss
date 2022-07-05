@@ -1,0 +1,32 @@
+@use "../global/colors" as c;
+@use "../util/mixins" as m;
+
+.main {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: min(80%, 1100px);
+	margin: 6rem auto 0;
+	position: relative;
+
+	&__left h1 {
+		padding-top: 4rem;
+	}
+
+	&__left p {
+		color: c.$color-gray-dark;
+		width: 67%;
+		line-height: 1.7;
+	}
+
+	&__left-button {
+		margin-top: 1.5rem;
+		@include m.button;
+	}
+
+	&__bg-image-tablet {
+		position: absolute;
+		z-index: -1;
+		top: -60%;
+		right: -25%;
+	}
+}

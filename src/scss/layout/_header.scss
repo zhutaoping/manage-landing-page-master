@@ -1,0 +1,25 @@
+@use "../global/colors" as c;
+@use "../util/mixins" as m;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 2rem auto 0;
+	width: min(80%, 1100px);
+
+	&__menu {
+		display: flex;
+		gap: 1rem;
+		color: c.$color-primary-dark;
+		font-size: 1rem;
+
+		& a:hover {
+			color: c.$color-gray-dark;
+		}
+	}
+
+	&__button {
+		@include m.button;
+	}
+}

@@ -9,7 +9,7 @@ h3 {
 }
 
 h1 {
-	font-size: clamp(u.rem(28), u.rem(16) + 2vw, u.rem(40));
+	font-size: clamp(u.rem(28), u.rem(16) + 3vw, u.rem(50));
 }
 
 h2 {
@@ -25,4 +25,16 @@ a,
 a:visited,
 a:active {
 	text-decoration: none;
+	color: black;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
 }

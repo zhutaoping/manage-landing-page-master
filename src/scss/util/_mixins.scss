@@ -1,0 +1,25 @@
+@use "../global/colors" as c;
+
+@mixin button {
+	background: c.$color-primary;
+	border: none;
+	border-radius: 50px;
+	padding: 0.7rem 1.5rem;
+	color: white;
+	font-size: 1rem;
+	box-shadow: rgb(36 45 82 / 0.2) 0px 8px 16px;
+	cursor: pointer;
+
+	&:hover {
+		filter: brightness(1.5);
+	}
+
+	&:active {
+		transform: translateY(1px);
+		box-shadow: rgb(36 45 82 / 0.2) 0px 4px 16px;
+	}
+
+	// &:active {
+	// 	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+	// }
+}

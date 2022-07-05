@@ -1,0 +1,44 @@
+@use "../global/colors" as c;
+@use "../util/mixins" as m;
+
+.features {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	width: min(80%, 1100px);
+	margin: 6rem auto 0;
+	position: relative;
+
+	&__left p {
+		color: c.$color-gray-dark;
+		width: 65%;
+		line-height: 1.7;
+	}
+
+	&__bg-image-tablet {
+		position: absolute;
+		z-index: -10;
+		left: -60%;
+		top: 50%;
+	}
+}
+
+.features__right .heading {
+	display: flex;
+	align-items: center;
+
+	&__index {
+		background: c.$color-primary;
+		border: none;
+		border-radius: 100px;
+		padding: 0.7rem 1.6rem;
+		color: white;
+		font-size: 1rem;
+		font-weight: bold;
+		margin-right: 2rem;
+	}
+
+	&__paragraph {
+		color: c.$color-gray-dark;
+		padding-left: 6.5rem;
+	}
+}
