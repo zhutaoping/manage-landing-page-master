@@ -1,5 +1,5 @@
-@use "../global/colors" as c;
-@use "../util/mixins" as m;
+@use "../global" as g;
+@use "../util" as u;
 
 .main {
 	display: grid;
@@ -8,19 +8,39 @@
 	margin: 6rem auto 0;
 	position: relative;
 
+	@include u.breakpoint-down(medium) {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	&__left {
+		@include u.breakpoint-down(medium) {
+			order: 1;
+		}
+	}
+
 	&__left h1 {
 		padding-top: 4rem;
+
+		@include u.breakpoint-down(medium) {
+			font-size: xxx-large;
+		}
 	}
 
 	&__left p {
-		color: c.$color-gray-dark;
+		color: g.$color-gray-dark;
 		width: 67%;
 		line-height: 1.7;
+
+		@include u.breakpoint-down(medium) {
+			margin: 0 auto;
+			font-size: larger;
+		}
 	}
 
 	&__left-button {
 		margin-top: 1.5rem;
-		@include m.button;
+		@include u.button;
 	}
 
 	&__bg-image-tablet {

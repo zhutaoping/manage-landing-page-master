@@ -24,27 +24,36 @@
 		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 	</head>
 	<body>
+		<div class="overlay" data-overlay></div>
 		<header class="header">
 			<div class="logo">
 				<img src="./images/logo.svg" alt="logo image" class="header__logo" />
 			</div>
 
-			<nav>
-				<ul class="header__menu">
+			<!-- hamburger -->
+			<input class="checkbox" type="checkbox" data-checkbox />
+			<div class="hamburger-lines">
+				<span class="line line1"></span>
+				<span class="line line2"></span>
+				<span class="line line3"></span>
+			</div>
+
+			<nav class="header__modal" data-header__modal>
+				<ul class="header__menu" data-header__menu>
 					<li>
-						<a href="#">Pricing</a>
+						<a class="menu-item" data-menu-item href="#">Pricing</a>
 					</li>
 					<li>
-						<a href="#">Product</a>
+						<a class="menu-item" data-menu-item href="#">Product</a>
 					</li>
 					<li>
-						<a href="#">About Us</a>
+						<a class="menu-item" data-menu-item href="#">About Us</a>
 					</li>
 					<li>
-						<a href="#">Careers</a>
+						<a class="menu-item" data-menu-item href="#">Careers</a>
 					</li>
 					<li>
-						<a href="#">Community</a>
+						<a class="menu-item" data-menu-item href="#">Community</a>
 					</li>
 				</ul>
 			</nav>
@@ -115,12 +124,12 @@
 			<h2 class="testimony__heading">What they’ve said</h2>
 
 			<div class="carousel" data-carousel>
-				<!-- <button class="carousel__btn prev" data-carousel-btn="prev">
+				<button class="carousel__btn prev" data-carousel-btn="prev">
 					&#8656;
 				</button>
 				<button class="carousel__btn next" data-carousel-btn="next">
 					&#8658;
-				</button> -->
+				</button>
 
 				<div class="carousel__slide" data-active>
 					<img src="./images/avatar-anisha.png" alt="" />
@@ -194,14 +203,18 @@
 					<a href="#!">Privacy Policy</a>
 				</li>
 			</ul>
-			<form class="footer__form">
-				<input
-					data-mail
-					type="email"
-					class="footer__input"
-					placeholder="Updates in your inbox… "
-				/>
-				<button type="submit" class="footer__button">Go</button>
+			<form class="footer__form" data-form novalidate>
+				<div class="footer__input-wrapper">
+					<input
+						data-mail
+						type="email"
+						class="footer__input"
+						placeholder="Updates in your inbox…"
+						required
+					/>
+					<span data-error class="error" aria-live="polite"></span>
+					<button type="submit" class="footer__button">Go</button>
+				</div>
 			</form>
 
 			<div class="footer__social">

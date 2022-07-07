@@ -52,34 +52,36 @@
 	}
 }
 
-// .carousel__btn {
-// 	position: absolute;
-// 	background: none;
-// 	border: none;
-// 	font-size: 4rem;
-// 	top: 50%;
-// 	z-index: 2;
-// 	transform: translateY(-50%);
-// 	color: rgb(255 255 255 / 0.5);
-// 	cursor: pointer;
-// 	border-radius: 0.25rem;
-// 	padding: 0 0.5rem;
-// 	background-color: rgb(0 0 0 / 0.1);
-// }
+/*----- Carousel Button -------------*/
+.carousel__btn {
+	display: none;
+	position: absolute;
+	background: none;
+	border: none;
+	font-size: 4rem;
+	top: 50%;
+	z-index: 2;
+	transform: translateY(-50%);
+	color: rgb(255 255 255 / 0.5);
+	cursor: pointer;
+	border-radius: 0.25rem;
+	padding: 0 0.5rem;
+	background-color: rgb(0 0 0 / 0.1);
+}
 
-// .carousel__btn:hover,
-// .carousel__btn:focus {
-// 	color: white;
-// 	background-color: rgb(0 0 0 / 0.2);
-// }
+.carousel__btn:hover,
+.carousel__btn:focus {
+	color: white;
+	background-color: rgb(0 0 0 / 0.2);
+}
 
-// .carousel__btn:focus {
-// 	outline: 1px solid black;
-// }
+.carousel__btn:focus {
+	outline: 1px solid black;
+}
 
-// .carousel__btn.prev {
-// 	left: 1rem;
-// }
-// .carousel__btn.next {
-// 	right: 1rem;
-// }
+.carousel__btn.prev {
+	left: 1rem;
+}
+.carousel__btn.next {
+	right: 1rem;
+}

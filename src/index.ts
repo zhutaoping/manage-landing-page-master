@@ -1,12 +1,37 @@
 import "./scss/main.scss";
+import form from "./form";
+import slider from "./slider";
 
-const email = document.querySelector("[data-mail]") as HTMLInputElement;
+form();
+slider();
 
-email.addEventListener("input", (e) => {
-	if (email.validity.typeMismatch) {
-		email.setCustomValidity("請輸入有效的電郵位址!");
-		email.reportValidity();
-	} else {
-		email.setCustomValidity("");
-	}
+const checkbox = document.querySelector("[data-checkbox]") as HTMLInputElement;
+const headerModal = document.querySelector("[data-header__modal]");
+const headerMenu = document.querySelector("[data-header__menu]");
+const menuItems = document.querySelectorAll("[data-menu-item]");
+const overlay = document.querySelector("[data-overlay]");
+
+function toggleModal() {
+	overlay!.classList.toggle("checked");
+	headerModal!.classList.toggle("checked");
+	headerMenu!.classList.toggle("checked");
+	menuItems.forEach((item) => {
+		item.classList.toggle("checked");
+	});
+}
+
+checkbox.addEventListener("change", () => {
+	toggleModal();
+});
+
+overlay!.addEventListener("click", () => {
+	toggleModal();
+	checkbox.checked = false;
+});
+
+menuItems.forEach((item) => {
+	item.addEventListener("click", () => {
+		toggleModal();
+		checkbox.checked = false;
+	});
 });

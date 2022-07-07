@@ -42,6 +42,11 @@
 
 	&__form {
 		display: flex;
+		flex-direction: column;
+	}
+
+	&__input-wrapper {
+		display: flex;
 		gap: 8px;
 	}
 
@@ -71,6 +76,11 @@
 		font-size: 0.7rem;
 		text-align: end;
 	}
+}
+
+input:invalid {
+	border-color: #900;
+	background-color: #fdd;
 }
 
 .attribution {
