@@ -43,6 +43,7 @@
 		}
 
 		@include u.breakpoint-down(mobile) {
+			padding: 0 1rem;
 		}
 	}
 
@@ -91,7 +92,7 @@
 
 		@include u.breakpoint-down(mobile) {
 			margin-top: 1rem;
-			padding: 0 1rem;
+			padding: 0 2rem;
 			margin-bottom: 3rem;
 		}
 	}

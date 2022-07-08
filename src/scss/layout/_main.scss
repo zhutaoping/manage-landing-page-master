@@ -21,6 +21,7 @@
 
 	&__left h1 {
 		padding-top: 4rem;
+		margin-bottom: 1rem;
 
 		@include u.breakpoint-down(medium) {
 			padding: 0;

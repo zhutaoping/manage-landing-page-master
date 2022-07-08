@@ -47,9 +47,6 @@
 		gap: 5rem;
 	}
 
-	@include u.breakpoint-down(mobile) {
-	}
-
 	&__slide {
 		background-color: c.$color-gray-light;
 		transition: 200ms opacity ease-in-out;
@@ -61,11 +58,16 @@
 
 	&__slide img {
 		width: 20%;
-		margin-top: -45px;
+		margin-top: -30px;
 		margin-bottom: 1rem;
 
-		// object-fit: cover;
-		// object-position: center;
+		@include u.breakpoint-down(medium) {
+			margin-top: -70px;
+		}
+
+		@include u.breakpoint-down(mobile) {
+			margin-top: -30px;
+		}
 	}
 
 	&__slide-text {
