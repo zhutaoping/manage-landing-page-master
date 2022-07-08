@@ -1,5 +1,5 @@
 @use "../global/colors" as c;
-@use "../util/mixins" as m;
+@use "../util/" as u;
 
 .features {
 	display: grid;
@@ -8,10 +8,46 @@
 	margin: 6rem auto 0;
 	position: relative;
 
+	@include u.breakpoint-down(medium) {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		// margin: 6rem auto;
+	}
+
+	@include u.breakpoint-down(mobile) {
+		width: 100vw;
+	}
+
+	&__left h2 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+
+		@include u.breakpoint-down(medium) {
+			text-align: center;
+		}
+
+		@include u.breakpoint-down(mobile) {
+		}
+	}
+
 	&__left p {
 		color: c.$color-gray-dark;
 		width: 65%;
 		line-height: 1.7;
+
+		@include u.breakpoint-down(medium) {
+			width: 100%;
+			text-align: center;
+			gap: 2rem;
+		}
+
+		@include u.breakpoint-down(mobile) {
+		}
+	}
+
+	& img {
+		max-width: 100%;
 	}
 
 	&__bg-image-tablet {
@@ -26,6 +62,13 @@
 	display: flex;
 	align-items: center;
 
+	&__title {
+	}
+
+	@include u.breakpoint-down(mobile) {
+		background: linear-gradient(-90deg, c.$color-red-pale 90%, white 10%);
+	}
+
 	&__index {
 		background: c.$color-primary;
 		border: none;
@@ -35,10 +78,21 @@
 		font-size: 1rem;
 		font-weight: bold;
 		margin-right: 2rem;
+
+		@include u.breakpoint-down(mobile) {
+			margin: 0 1rem;
+		}
 	}
 
 	&__paragraph {
-		color: c.$color-gray-dark;
 		padding-left: 6.5rem;
+		line-height: 1.7;
+		color: c.$color-gray-dark;
+
+		@include u.breakpoint-down(mobile) {
+			margin-top: 1rem;
+			padding: 0 1rem;
+			margin-bottom: 3rem;
+		}
 	}
 }

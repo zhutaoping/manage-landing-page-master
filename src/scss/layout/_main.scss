@@ -23,7 +23,12 @@
 		padding-top: 4rem;
 
 		@include u.breakpoint-down(medium) {
-			font-size: xxx-large;
+			padding: 0;
+			margin-bottom: 1rem;
+		}
+
+		@include u.breakpoint-down(small) {
+			font-size: 2.5rem;
 		}
 	}
 
@@ -34,7 +39,7 @@
 
 		@include u.breakpoint-down(medium) {
 			margin: 0 auto;
-			font-size: larger;
+			width: 100%;
 		}
 	}
 
@@ -48,5 +53,13 @@
 		z-index: -1;
 		top: -60%;
 		right: -25%;
+	}
+
+	&__right img {
+		max-width: 100%;
+
+		@include u.breakpoint-down(small) {
+			// display: none;
+		}
 	}
 }

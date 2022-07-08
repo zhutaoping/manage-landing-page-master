@@ -1,20 +1,36 @@
+@use "../util/" as u;
+
 $font: "Be Vietnam Pro", sans-serif;
 
 *,
 *::before,
 *::after {
+	margin: 0;
+	padding: 0;
 	box-sizing: inherit;
 }
 
+html {
+	width: 100vw;
+}
+
 body {
-	margin: 0;
-	padding: 0;
 	font-family: $font;
-	background: url("../images/bg-tablet-pattern.svg") no-repeat top -150px right -50px;
 }
 
 ul,
 ol {
 	padding: 0;
 	list-style: none;
+}
+
+.mainBackground {
+	background: url("../images/bg-tablet-pattern.svg") no-repeat;
+	background-position: top -200px right -120px;
+
+	@include u.breakpoint-down(mobile) {
+		max-width: 100%;
+		background-size: 100%;
+		background-position: 80px -20px;
+	}
 }

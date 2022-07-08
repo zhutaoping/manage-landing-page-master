@@ -1,5 +1,5 @@
 @use "../global/colors" as c;
-@use "../util/mixins" as m;
+@use "../util/" as u;
 
 .simplify {
 	display: flex;
@@ -12,12 +12,26 @@
 	position: relative;
 	overflow: hidden;
 
+	@include u.breakpoint-down(medium) {
+		margin-top: 5rem;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	@include u.breakpoint-down(small) {
+		margin-top: 3rem;
+	}
+
 	&__heading {
 		margin-bottom: 0;
+
+		@include u.breakpoint-down(small) {
+			font-size: 2.2rem;
+		}
 	}
 
 	&__button {
-		@include m.button;
+		@include u.button;
 		background-color: c.$color-gray-light;
 		color: c.$color-primary;
 		font-weight: bold;
@@ -27,5 +41,9 @@
 	&__bg-image {
 		position: absolute;
 		left: 20%;
+
+		@include u.breakpoint-down(small) {
+			display: none;
+		}
 	}
 }

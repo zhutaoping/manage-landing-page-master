@@ -1,16 +1,33 @@
 @use "../global/colors" as c;
-@use "../util/mixins" as m;
+@use "../util" as u;
 
 .testimony {
 	margin-top: 10rem;
 
+	@include u.breakpoint-down(medium) {
+		margin-top: 7rem;
+	}
+
+	@include u.breakpoint-down(mobile) {
+		margin-top: 3rem;
+	}
+
 	&__heading {
 		text-align: center;
 		margin-bottom: 8rem;
+
+		@include u.breakpoint-down(medium) {
+			font-size: 2rem;
+		}
+
+		@include u.breakpoint-down(mobile) {
+			font-size: 2rem;
+			margin-bottom: 6rem;
+		}
 	}
 
 	&__button {
-		@include m.button;
+		@include u.button;
 		display: flex;
 		margin: 0 auto;
 		margin-top: 3rem;
@@ -21,6 +38,17 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem;
+	width: 80vw;
+	margin: 0 auto;
+
+	@include u.breakpoint-down(medium) {
+		display: flex;
+		flex-direction: column;
+		gap: 5rem;
+	}
+
+	@include u.breakpoint-down(mobile) {
+	}
 
 	&__slide {
 		background-color: c.$color-gray-light;
@@ -34,6 +62,7 @@
 	&__slide img {
 		width: 20%;
 		margin-top: -45px;
+		margin-bottom: 1rem;
 
 		// object-fit: cover;
 		// object-position: center;
@@ -43,6 +72,7 @@
 		padding: 0 1rem 1rem;
 		color: c.$color-gray-dark;
 		line-height: 1.7;
+		margin-top: 1rem;
 	}
 
 	&__slide[data-active] {
