@@ -7,10 +7,7 @@
 	align-items: center;
 	margin: 2rem auto 0;
 	width: min(80%, 1100px);
-
-	@include u.breakpoint-down(medium) {
-		position: relative;
-	}
+	position: relative;
 
 	&__logo {
 		@include u.breakpoint-down(medium) {
@@ -42,6 +39,7 @@
 	}
 }
 
+/*----- Hamburger --------*/
 .checkbox {
 	position: absolute;
 	display: block;
@@ -79,19 +77,16 @@
 
 .hamburger-lines .line1 {
 	transform-origin: 0% 0%;
-	transition: transform 0.4s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 }
 
 .hamburger-lines .line2 {
-	transition: transform 0.2s ease-in-out;
+	transition: transform 0.1s ease-in-out;
 }
 
 .hamburger-lines .line3 {
 	transform-origin: 0% 100%;
-	transition: transform 0.4s ease-in-out;
-}
-input[type="checkbox"]:checked ~ .header__menu {
-	transform: translateX(0);
+	transition: transform 0.2s ease-in-out;
 }
 
 input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
@@ -106,29 +101,24 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 	transform: rotate(-45deg);
 }
 
+/*----- Modal -------------*/
 .header__modal.checked {
-	position: absolute;
-	top: 20rem;
+	position: fixed;
+	top: 10%;
 	width: 80vw;
-	height: 70%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	z-index: 10;
+	animation: slidein 0.2s ease-in-out;
 }
 
 .header__menu.checked {
-	position: relative;
 	padding: 3rem;
 	background-color: white;
 	border-radius: 8px;
 	width: 70vw;
 	display: flex;
 	flex-direction: column;
-	transition: transform 0.5s ease-in-out;
 	text-align: center;
 	box-shadow: rgba(112, 128, 175, 0.2) 0px 16px 24px 0px;
-	transition: transform 300ms cubic-bezier(0.57, 0.21, 0.69, 1.25);
 }
 
 .menu-item.checked {
@@ -138,11 +128,22 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 }
 
 .overlay.checked {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100vh;
 	z-index: 5;
 	background-color: rgba(0, 0, 0, 0.5);
+	transition: all 0.2s ease-in;
+}
+
+@keyframes slidein {
+	from {
+		margin-top: -100%;
+	}
+
+	to {
+		margin-top: 0%;
+	}
 }
