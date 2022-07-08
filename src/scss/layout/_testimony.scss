@@ -75,6 +75,10 @@
 		color: c.$color-gray-dark;
 		line-height: 1.7;
 		margin-top: 1rem;
+
+		@include u.breakpoint-down(mobile) {
+			padding: 0;
+		}
 	}
 
 	&__slide[data-active] {

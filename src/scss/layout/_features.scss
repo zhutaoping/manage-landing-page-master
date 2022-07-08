@@ -14,7 +14,7 @@
 	}
 
 	@include u.breakpoint-down(mobile) {
-		width: 100%;
+		width: 80%;
 	}
 
 	&__left h2 {
@@ -33,6 +33,7 @@
 		color: c.$color-gray-dark;
 		width: 65%;
 		line-height: 1.7;
+		margin-bottom: 3rem;
 
 		@include u.breakpoint-down(medium) {
 			width: 100%;
@@ -41,7 +42,6 @@
 		}
 
 		@include u.breakpoint-down(mobile) {
-			padding: 0 1rem;
 		}
 	}
 
@@ -62,7 +62,7 @@
 	align-items: center;
 
 	&__title {
-		width: 100%;
+		// width: 100%;
 	}
 
 	@include u.breakpoint-down(mobile) {
@@ -80,7 +80,6 @@
 		margin-right: 2rem;
 
 		@include u.breakpoint-down(mobile) {
-			margin: 0 1rem;
 		}
 	}
 
@@ -91,7 +90,7 @@
 
 		@include u.breakpoint-down(mobile) {
 			margin-top: 1rem;
-			padding: 0 2rem;
+			padding: 0;
 			margin-bottom: 3rem;
 		}
 	}
