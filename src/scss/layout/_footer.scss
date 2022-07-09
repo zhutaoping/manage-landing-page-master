@@ -34,7 +34,7 @@
 	}
 
 	&__logo {
-		filter: brightness(0) invert(1);
+		fill: white;
 	}
 
 	&__social {
@@ -154,6 +154,7 @@
 			grid-column: 1 / 3;
 			justify-self: end;
 			padding-top: 2rem;
+			padding-bottom: 1rem;
 		}
 
 		@include u.breakpoint-down(small) {

@@ -25,12 +25,22 @@ ol {
 }
 
 .mainBackground {
-	background: url("../images/bg-tablet-pattern.svg") no-repeat;
-	background-position: top -200px right -120px;
+	background-image: url("../images/bg-tablet-pattern.svg"),
+		url("../images/bg-tablet-pattern.svg");
+	background-position: top -200px right -120px, top 1000px left -500px;
+	background-repeat: no-repeat;
 
 	@include u.breakpoint-down(mobile) {
 		max-width: 100%;
 		background-size: 100%;
-		background-position: 80px -20px;
+		background-position: 80px -20px, top 450px left 250px;
 	}
 }
+
+// .featuresBackground {
+// 	background: url("../images/bg-tablet-pattern.svg") no-repeat;
+// 	background-position: top 1000px left -500px;
+
+// 	@include u.breakpoint-down(mobile) {
+// 	}
+// }
