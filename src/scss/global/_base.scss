@@ -14,12 +14,10 @@ html,
 body {
 	font-family: $font;
 	height: 100%;
-	width: 100%;
 }
 
 ul,
 ol {
-	padding: 0;
 	list-style: none;
 }
 
@@ -35,11 +33,3 @@ ol {
 		background-position: 80px -20px, top 450px left 250px;
 	}
 }
-
-// .featuresBackground {
-// 	background: url("../images/bg-tablet-pattern.svg") no-repeat;
-// 	background-position: top 1000px left -500px;
-
-// 	@include u.breakpoint-down(mobile) {
-// 	}
-// }

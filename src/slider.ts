@@ -1,70 +1,86 @@
-function slider() {
-	const slides = document.querySelectorAll(
-		"[data-slide]"
-	) as NodeListOf<HTMLElement>;
-	const btnPrev = document.querySelector("[data-btn-prev]")!;
-	const btnNext = document.querySelector("[data-btn-next]")!;
-	const dotContainer = document.querySelector("[data-dots]")!;
+function carousel() {
+	const slider = document.querySelector("[data-container]") as HTMLElement;
+	const slides = Array.from(document.querySelectorAll("[data-slide]"));
 
-	const mediaQuery = window.matchMedia("(max-width: 399px)");
+	let isDragging = false,
+		startPos = 0,
+		currentTranslate = 0,
+		prevTranslate = 0,
+		animationID: any,
+		currentIndex = 0;
 
-	let curSlide = 0;
-	const maxSlide = slides.length;
+	slides.forEach((slide, index) => {
+		const slideImage = slide.querySelector("img")!;
+		slideImage.addEventListener("dragstart", (e) => e.preventDefault());
 
-	const createDots = function () {
-		slides.forEach(function (_, i) {
-			dotContainer.insertAdjacentHTML(
-				"beforeend",
-				`<button class="dots__dot" data-slide="${i}"></button>`
-			);
-		});
+		// Touch events
+		slide.addEventListener("touchstart", touchStart(index));
+		slide.addEventListener("touchend", touchEnd);
+		slide.addEventListener("touchmove", touchMove);
+
+		// Mouse events
+		slide.addEventListener("mousedown", touchStart(index));
+		slide.addEventListener("mouseup", touchEnd);
+		slide.addEventListener("mousemove", touchMove);
+		slide.addEventListener("mouseleave", touchEnd);
+	});
+
+	window.addEventListener("resize", setPositionByIndex);
+
+	window.oncontextmenu = function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+		return false;
 	};
 
-	const activateDot = function (slide: number) {
-		document
-			.querySelectorAll(".dots__dot")
-			.forEach((dot) => dot.classList.remove("dots__dot--active"));
+	function touchStart(index: number) {
+		return function (e: any) {
+			currentIndex = index;
+			startPos = getPositionX(e);
+			isDragging = true;
 
-		document
-			.querySelector(`.dots__dot[data-slide="${slide}"]`)!
-			.classList.add("dots__dot--active");
-	};
+			animationID = requestAnimationFrame(animation);
+		};
+	}
 
-	const goToSlide = function (slide: number) {
-		slides.forEach(
-			(s, i) => (s.style.transform = `translateX(${120 * (i - slide)}%)`)
-		);
-	};
+	function touchEnd() {
+		cancelAnimationFrame(animationID);
+		isDragging = false;
+		const movedBy = currentTranslate - prevTranslate;
+		console.log(slides.length);
+		console.log(currentIndex);
 
-	// Next slide
-	const nextSlide = function () {
-		if (curSlide === maxSlide - 1) {
-			curSlide = 0;
-		} else {
-			curSlide++;
+		if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
+
+		if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
+
+		setPositionByIndex();
+	}
+
+	function touchMove(e: any) {
+		if (isDragging) {
+			const currentPosition = getPositionX(e);
+			currentTranslate = prevTranslate + currentPosition - startPos;
 		}
-		goToSlide(curSlide);
-		activateDot(curSlide);
-	};
+	}
 
-	const prevSlide = function () {
-		if (curSlide === 0) {
-			curSlide = maxSlide - 1;
-		} else {
-			curSlide--;
-		}
-		goToSlide(curSlide);
-		activateDot(curSlide);
-	};
+	function setPositionByIndex() {
+		currentTranslate = currentIndex * -window.innerWidth;
+		prevTranslate = currentTranslate;
+		setSliderPosition();
+	}
 
-	const init = function () {
-		createDots();
-		goToSlide(0);
-		activateDot(0);
-	};
-	if (mediaQuery.matches) init();
+	function getPositionX(e: any) {
+		return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+	}
 
-	btnPrev.addEventListener("click", prevSlide);
-	btnNext.addEventListener("click", nextSlide);
+	function animation() {
+		setSliderPosition();
+		if (isDragging) requestAnimationFrame(animation);
+	}
+
+	function setSliderPosition() {
+		slider.style.transform = `translateX(${currentTranslate}px)`;
+	}
 }
-export default slider;
+export default carousel;
