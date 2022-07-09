@@ -38,13 +38,11 @@ function slider() {
 
 	// Next slide
 	const nextSlide = function () {
-		console.log(curSlide);
 		if (curSlide === maxSlide - 1) {
 			curSlide = 0;
 		} else {
 			curSlide++;
 		}
-
 		goToSlide(curSlide);
 		activateDot(curSlide);
 	};
@@ -60,11 +58,10 @@ function slider() {
 	};
 
 	const init = function () {
-		goToSlide(0);
 		createDots();
+		goToSlide(0);
 		activateDot(0);
 	};
-
 	if (mediaQuery.matches) init();
 
 	btnPrev.addEventListener("click", prevSlide);

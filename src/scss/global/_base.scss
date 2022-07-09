@@ -7,14 +7,14 @@ $font: "Be Vietnam Pro", sans-serif;
 *::after {
 	margin: 0;
 	padding: 0;
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 
-html {
-}
-
+html,
 body {
 	font-family: $font;
+	height: 100%;
+	width: 100%;
 }
 
 ul,

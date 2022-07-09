@@ -2,8 +2,8 @@ import "./scss/main.scss";
 import form from "./form";
 import slider from "./slider";
 
-form();
 slider();
+form();
 
 const checkbox = document.querySelector("[data-checkbox]") as HTMLInputElement;
 const headerModal = document.querySelector("[data-header__modal]")!;
