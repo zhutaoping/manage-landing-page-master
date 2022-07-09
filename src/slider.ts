@@ -1,24 +1,73 @@
 function slider() {
-	const btns = document.querySelectorAll(
-		"[data-carousel-btn]"
+	const slides = document.querySelectorAll(
+		"[data-slide]"
 	) as NodeListOf<HTMLElement>;
+	const btnPrev = document.querySelector("[data-btn-prev]")!;
+	const btnNext = document.querySelector("[data-btn-next]")!;
+	const dotContainer = document.querySelector("[data-dots]")!;
 
-	btns.forEach((btn) => {
-		btn.addEventListener("click", () => {
-			const offset = btn.dataset.carouselBtn === "next" ? 1 : -1;
-			const slides = btn
-				.closest("[data-carousel]")! // Up the DOM
-				.querySelector("[data-slides]"); // Down the DOM
+	const mediaQuery = window.matchMedia("(max-width: 399px)");
 
-			const activeSlide = slides!.querySelector("[data-active]") as HTMLElement;
-			let newIndex = [...slides!.children].indexOf(activeSlide!) + offset;
-			if (newIndex < 0) newIndex = slides!.children.length - 1;
-			if (newIndex >= slides!.children.length) newIndex = 0;
-			//@ts-ignore
-			slides!.children[newIndex].dataset.active = true;
-			delete activeSlide.dataset.active;
+	let curSlide = 0;
+	const maxSlide = slides.length;
+
+	const createDots = function () {
+		slides.forEach(function (_, i) {
+			dotContainer.insertAdjacentHTML(
+				"beforeend",
+				`<button class="dots__dot" data-slide="${i}"></button>`
+			);
 		});
-	});
-}
+	};
 
+	const activateDot = function (slide: number) {
+		document
+			.querySelectorAll(".dots__dot")
+			.forEach((dot) => dot.classList.remove("dots__dot--active"));
+
+		document
+			.querySelector(`.dots__dot[data-slide="${slide}"]`)!
+			.classList.add("dots__dot--active");
+	};
+
+	const goToSlide = function (slide: number) {
+		slides.forEach(
+			(s, i) => (s.style.transform = `translateX(${120 * (i - slide)}%)`)
+		);
+	};
+
+	// Next slide
+	const nextSlide = function () {
+		console.log(curSlide);
+		if (curSlide === maxSlide - 1) {
+			curSlide = 0;
+		} else {
+			curSlide++;
+		}
+
+		goToSlide(curSlide);
+		activateDot(curSlide);
+	};
+
+	const prevSlide = function () {
+		if (curSlide === 0) {
+			curSlide = maxSlide - 1;
+		} else {
+			curSlide--;
+		}
+		goToSlide(curSlide);
+		activateDot(curSlide);
+	};
+
+	const init = function () {
+		goToSlide(0);
+		createDots();
+		activateDot(0);
+	};
+
+	if (mediaQuery.matches) init();
+
+	btnPrev.addEventListener("click", prevSlide);
+	btnNext.addEventListener("click", nextSlide);
+}
 export default slider;
