@@ -42,7 +42,8 @@ Users should be able to:
 
 ### What I learned
 
-初次學習 touch slider。複習重點為 RWD, hamburger menu, form validation, SCSS, CSS grid 等等。
+Touch slider, window.matchMedia, etc.
+複習重點為 RWD, hamburger menu, form validation, SCSS, CSS grid 等等。
 
 ## Author
 

@@ -31,7 +31,11 @@ overlay.addEventListener("click", () => {
 
 menuItems.forEach((item) => {
 	item.addEventListener("click", () => {
-		toggleModal();
-		checkbox.checked = false;
+		let mql = window.matchMedia("(max-width: 899px)");
+		console.log("test");
+		if (mql.matches) {
+			toggleModal();
+			checkbox.checked = false;
+		}
 	});
 });
