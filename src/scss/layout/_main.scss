@@ -58,9 +58,5 @@
 
 	&__right img {
 		max-width: 100%;
-
-		@include u.breakpoint-down(small) {
-			// display: none;
-		}
 	}
 }

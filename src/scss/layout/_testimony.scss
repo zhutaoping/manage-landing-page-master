@@ -25,15 +25,14 @@
 		}
 
 		@include u.breakpoint-down(mobile) {
-			margin-bottom: 3rem;
+			margin-bottom: 6rem;
 		}
 	}
 
 	&__button {
 		@include u.button;
 		display: flex;
-		margin: 0 auto;
-		margin-top: 2rem;
+		margin: 2rem auto;
 	}
 }
 
@@ -56,7 +55,7 @@
 	@include u.breakpoint-down(mobile) {
 		display: inline-flex;
 		flex-direction: row;
-		height: 40vh;
+		height: 30vh;
 		gap: 0;
 		transition: all 0.03s;
 	}
@@ -85,7 +84,7 @@
 		}
 
 		@include u.breakpoint-down(mobile) {
-			margin: 0;
+			margin-top: -50px;
 		}
 	}
 
@@ -97,7 +96,7 @@
 		margin-top: 1rem;
 
 		@include u.breakpoint-down(mobile) {
-			padding: 0 1rem;
+			padding: 0 1rem 1rem;
 		}
 	}
 }
@@ -114,22 +113,21 @@
 }
 
 .dots__dot {
-	border: none;
-	background-color: #b9b9b9;
+	border: 2px solid c.$color-primary;
+	background-color: white;
 	opacity: 0.7;
 	height: 1rem;
 	width: 1rem;
 	border-radius: 50%;
 	margin-right: 1.75rem;
-	cursor: pointer;
 	transition: all 0.3s;
-}
 
-.dots__dot:last-child {
-	margin: 0;
-}
+	&:last-child {
+		margin: 0;
+	}
 
-.dots__dot--active {
-	background-color: #888;
-	opacity: 1;
+	&--active {
+		background-color: c.$color-primary;
+		opacity: 1;
+	}
 }
