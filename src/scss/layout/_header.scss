@@ -52,6 +52,10 @@
 	z-index: 100;
 	opacity: 0;
 	cursor: pointer;
+
+	@include u.breakpoint-down(mobile) {
+		right: 0;
+	}
 }
 
 .hamburger-lines {
@@ -153,10 +157,10 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
 
 @keyframes slidein {
 	from {
-		margin-top: -100%;
+		margin-left: -100%;
 	}
 
 	to {
-		margin-top: 0%;
+		margin-left: 0%;
 	}
 }
