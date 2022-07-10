@@ -1,6 +1,7 @@
 function carousel() {
 	const container = document.querySelector("[data-container]") as HTMLElement;
 	const slides = Array.from(document.querySelectorAll("[data-slide]"));
+	const dotContainer = document.querySelector("[data-dots]")!;
 
 	let isDragging = false,
 		startPos = 0,
@@ -25,7 +26,7 @@ function carousel() {
 		// slide.addEventListener("mouseleave", touchEnd);
 	});
 
-	window.addEventListener("resize", setPositionByIndex);
+	// window.addEventListener("resize", setPositionByIndex);
 
 	window.oncontextmenu = function (e) {
 		e.preventDefault();
@@ -66,6 +67,7 @@ function carousel() {
 		currentTranslate = currentIndex * -window.innerWidth;
 		prevTranslate = currentTranslate;
 		setSliderPosition();
+		activateDot(currentIndex);
 	}
 
 	function getPositionX(e: any) {
@@ -80,5 +82,26 @@ function carousel() {
 	function setSliderPosition() {
 		container.style.transform = `translateX(${currentTranslate}px)`;
 	}
+
+	const createDots = function () {
+		slides.forEach(function (_, i) {
+			dotContainer.insertAdjacentHTML(
+				"beforeend",
+				`<button class="dots__dot" data-slide="${i}"></button>`
+			);
+		});
+	};
+	createDots();
+
+	const activateDot = function (slide: number) {
+		document
+			.querySelectorAll(".dots__dot")
+			.forEach((dot) => dot.classList.remove("dots__dot--active"));
+
+		document
+			.querySelector(`.dots__dot[data-slide="${slide}"]`)!
+			.classList.add("dots__dot--active");
+	};
+	activateDot(0);
 }
 export default carousel;
