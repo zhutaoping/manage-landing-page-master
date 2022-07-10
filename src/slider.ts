@@ -11,22 +11,10 @@ function carousel() {
 		currentIndex = 0;
 
 	slides.forEach((slide, index) => {
-		// const slideImage = slide.querySelector("img")!;
-		// slideImage.addEventListener("dragstart", (e) => e.preventDefault());
-
-		// Touch events
 		slide.addEventListener("touchstart", touchStart(index));
 		slide.addEventListener("touchend", touchEnd);
 		slide.addEventListener("touchmove", touchMove);
-
-		// Mouse events
-		// slide.addEventListener("mousedown", touchStart(index));
-		// slide.addEventListener("mouseup", touchEnd);
-		// slide.addEventListener("mousemove", touchMove);
-		// slide.addEventListener("mouseleave", touchEnd);
 	});
-
-	// window.addEventListener("resize", setPositionByIndex);
 
 	window.oncontextmenu = function (e) {
 		e.preventDefault();

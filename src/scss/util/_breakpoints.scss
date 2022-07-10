@@ -1,6 +1,6 @@
 @use "functions" as f;
 
-// 700, 900, 1440px Mobile: 375px Desktop: 1440px
+// 700, 900, 1440px; Mobile: 375px Desktop: 1440px
 $breakpoints-up: (
 	// 700 / 16 = 43.75 ...
 	"medium": f.em(700),
