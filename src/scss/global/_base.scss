@@ -13,7 +13,7 @@ $font: "Be Vietnam Pro", sans-serif;
 html,
 body {
 	font-family: $font;
-	height: 100%;
+	min-height: 100vh;
 }
 
 ul,

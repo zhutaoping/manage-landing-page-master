@@ -1,5 +1,5 @@
 function carousel() {
-	const slider = document.querySelector("[data-container]") as HTMLElement;
+	const container = document.querySelector("[data-container]") as HTMLElement;
 	const slides = Array.from(document.querySelectorAll("[data-slide]"));
 
 	let isDragging = false,
@@ -10,8 +10,8 @@ function carousel() {
 		currentIndex = 0;
 
 	slides.forEach((slide, index) => {
-		const slideImage = slide.querySelector("img")!;
-		slideImage.addEventListener("dragstart", (e) => e.preventDefault());
+		// const slideImage = slide.querySelector("img")!;
+		// slideImage.addEventListener("dragstart", (e) => e.preventDefault());
 
 		// Touch events
 		slide.addEventListener("touchstart", touchStart(index));
@@ -19,10 +19,10 @@ function carousel() {
 		slide.addEventListener("touchmove", touchMove);
 
 		// Mouse events
-		slide.addEventListener("mousedown", touchStart(index));
-		slide.addEventListener("mouseup", touchEnd);
-		slide.addEventListener("mousemove", touchMove);
-		slide.addEventListener("mouseleave", touchEnd);
+		// slide.addEventListener("mousedown", touchStart(index));
+		// slide.addEventListener("mouseup", touchEnd);
+		// slide.addEventListener("mousemove", touchMove);
+		// slide.addEventListener("mouseleave", touchEnd);
 	});
 
 	window.addEventListener("resize", setPositionByIndex);
@@ -47,8 +47,6 @@ function carousel() {
 		cancelAnimationFrame(animationID);
 		isDragging = false;
 		const movedBy = currentTranslate - prevTranslate;
-		console.log(slides.length);
-		console.log(currentIndex);
 
 		if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
 
@@ -71,7 +69,7 @@ function carousel() {
 	}
 
 	function getPositionX(e: any) {
-		return e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+		return e.touches[0].clientX;
 	}
 
 	function animation() {
@@ -80,7 +78,7 @@ function carousel() {
 	}
 
 	function setSliderPosition() {
-		slider.style.transform = `translateX(${currentTranslate}px)`;
+		container.style.transform = `translateX(${currentTranslate}px)`;
 	}
 }
 export default carousel;
