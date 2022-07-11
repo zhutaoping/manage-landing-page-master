@@ -81,6 +81,7 @@
 		}
 
 		@include u.breakpoint-down(small) {
+			justify-self: flex-start;
 			grid-column: 2 / 3;
 			grid-row: 2 / 3;
 		}
