@@ -75,7 +75,7 @@
 			</div>
 		</main>
 
-		<section class="features">
+		<section class="features" role="features">
 			<div class="features__left">
 				<h2>What’s different about Manage?</h2>
 				<p>
@@ -88,7 +88,7 @@
 			<div class="features__right">
 				<div class="heading">
 					<button class="heading__index">01</button>
-					<h4 class="heading__title">Track company-wide progress</h4>
+					<h3 class="heading__title">Track company-wide progress</h3>
 				</div>
 				<p class="heading__paragraph">
 					See how your day-to-day tasks fit into the wider vision. Go from
@@ -97,7 +97,7 @@
 				</p>
 				<div class="heading">
 					<button class="heading__index">02</button>
-					<h4 class="heading__title">Advanced built-in reports</h4>
+					<h3 class="heading__title">Advanced built-in reports</h3>
 				</div>
 				<p class="heading__paragraph">
 					Advanced built-in reports Set internal delivery estimates and track
@@ -106,7 +106,7 @@
 				</p>
 				<div class="heading">
 					<button class="heading__index">03</button>
-					<h4 class="heading__title">Everything you need in one place</h4>
+					<h3 class="heading__title">Everything you need in one place</h3>
 				</div>
 				<p class="heading__paragraph">
 					Everything you need in one place Stop jumping from one service to
@@ -116,13 +116,13 @@
 			</div>
 		</section>
 
-		<section class="testimony slider" data-slider>
+		<section class="testimony slider" data-slider role="testimony">
 			<h2 class="testimony__heading">What they’ve said</h2>
 
 			<div class="container" data-container>
 				<div class="container__slide" data-slide>
 					<img src="./images/avatar-anisha.png" alt="" />
-					<h4 class="container__slide-name">Anisha Li</h4>
+					<h3 class="container__slide-name">Anisha Li</h3>
 					<p class="container__slide-text">
 						“Manage has supercharged our team's workflow. The ability to
 						maintain visibility on larger milestones at all times keeps everyone
@@ -132,7 +132,7 @@
 
 				<div class="container__slide" data-slide>
 					<img src="./images/avatar-ali.png" alt="" />
-					<h4 class="container__slide-name">Ali Bravo</h4>
+					<h3 class="container__slide-name">Ali Bravo</h3>
 					<p class="container__slide-text">
 						“We have been able to cancel so many other subscriptions since using
 						Manage. There is no more cross-channel confusion and everyone is
@@ -142,7 +142,7 @@
 
 				<div class="container__slide" data-slide>
 					<img src="./images/avatar-richard.png" alt="" />
-					<h4 class="container__slide-name">Richard Watts</h4>
+					<h3 class="container__slide-name">Richard Watts</h3>
 					<p class="container__slide-text">
 						“Manage allows us to provide structure and process. It keeps us
 						organized and focused. I can't stop recommending them to everyone I
@@ -157,7 +157,7 @@
 			<button class="testimony__button">Get Started</button>
 		</section>
 
-		<section class="simplify simplifyBackground">
+		<section class="simplify simplifyBackground" role="get started button">
 			<h2 class="simplify__heading">Simplify how your team works today.</h2>
 			<button class="simplify__button">Get Started</button>
 		</section>
@@ -224,31 +224,33 @@
 						required
 					/>
 					<span data-error class="error" aria-live="polite"></span>
-					<button type="submit" class="footer__button">Go</button>
+					<button aria-label="Go" type="submit" class="footer__button">
+						Go
+					</button>
 				</div>
 			</form>
 
 			<div class="footer__social">
-				<a href="#!"
+				<a href="#!" aria-label="facebook icon"
 					><img src="./images/icon-facebook.svg" alt="" class="footer__icon"
 				/></a>
-				<a href="#!"
+				<a href="#!" aria-label="youtube icon"
 					><img src="./images/icon-youtube.svg" alt="" class="footer__icon"
 				/></a>
-				<a href="#!"
+				<a href="#!" aria-label="twitter icon"
 					><img src="./images/icon-twitter.svg" alt="" class="footer__icon"
 				/></a>
-				<a href="#!"
+				<a href="#!" aria-label="pinterest icon"
 					><img src="./images/icon-pinterest.svg" alt="" class="footer__icon"
 				/></a>
-				<a href="#!"
+				<a href="#!" aria-label="instagram icon"
 					><img src="./images/icon-instagram.svg" alt="" class="footer__icon"
 				/></a>
 			</div>
 			<p class="footer__copyright">Copyright 2020. All Rights Reserved</p>
 		</footer>
 
-		<div class="attribution">
+		<div class="attribution" role="attribution">
 			Challenge by
 			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
 				>Frontend Mentor</a

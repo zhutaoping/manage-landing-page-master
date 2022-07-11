@@ -13,7 +13,8 @@ h1 {
 }
 
 h2 {
-	font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(36));
+	// font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(36));
+	font-size: 2rem;
 }
 
 p {

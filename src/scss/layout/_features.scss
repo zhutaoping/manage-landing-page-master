@@ -18,7 +18,6 @@
 	}
 
 	&__left h2 {
-		font-size: 1.8rem;
 		margin-bottom: 1.5rem;
 
 		@include u.breakpoint-down(medium) {
@@ -54,6 +53,7 @@
 .features__right .heading {
 	display: flex;
 	align-items: center;
+	margin-bottom: 1rem;
 
 	@include u.breakpoint-down(mobile) {
 		background: linear-gradient(-90deg, c.$color-red-pale 90%, white 10%);
@@ -78,6 +78,7 @@
 		padding-left: 6.5rem;
 		line-height: 1.7;
 		color: c.$color-gray-dark;
+		margin-bottom: 2rem;
 
 		@include u.breakpoint-down(mobile) {
 			margin-top: 1rem;
