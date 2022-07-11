@@ -1,8 +1,8 @@
 import "./scss/main.scss";
 import form from "./form";
-import slider from "./slider";
+import { carousel } from "./slider";
 
-slider();
+carousel();
 form();
 
 const checkbox = document.querySelector("[data-checkbox]") as HTMLInputElement;

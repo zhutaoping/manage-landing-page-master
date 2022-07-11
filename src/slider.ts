@@ -1,4 +1,4 @@
-function carousel() {
+export function carousel() {
 	const container = document.querySelector("[data-container]") as HTMLElement;
 	const slides = Array.from(document.querySelectorAll("[data-slide]"));
 	const dotContainer = document.querySelector("[data-dots]")!;
@@ -92,4 +92,3 @@ function carousel() {
 	};
 	activateDot(0);
 }
-export default carousel;
