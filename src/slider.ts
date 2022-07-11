@@ -58,7 +58,7 @@ function carousel() {
 		activateDot(currentIndex);
 	}
 
-	function getPositionX(e: TouchEvent) {
+	function getPositionX(e: any) {
 		return e.touches[0].clientX;
 	}
 
