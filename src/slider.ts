@@ -23,7 +23,7 @@ function carousel() {
 	};
 
 	function touchStart(index: number) {
-		return function (e: any) {
+		return function (e: Event) {
 			currentIndex = index;
 			startPos = getPositionX(e);
 			isDragging = true;
@@ -44,7 +44,7 @@ function carousel() {
 		setPositionByIndex();
 	}
 
-	function touchMove(e: any) {
+	function touchMove(e: Event) {
 		if (isDragging) {
 			const currentPosition = getPositionX(e);
 			currentTranslate = prevTranslate + currentPosition - startPos;
@@ -58,7 +58,7 @@ function carousel() {
 		activateDot(currentIndex);
 	}
 
-	function getPositionX(e: any) {
+	function getPositionX(e: TouchEvent) {
 		return e.touches[0].clientX;
 	}
 
