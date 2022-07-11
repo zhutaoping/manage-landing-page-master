@@ -58,7 +58,12 @@ export function carousel() {
 		activateDot(currentIndex);
 	}
 
-	function getPositionX(e: any) {
+	function isTouchEvent(e: Event): e is TouchEvent {
+		return "touches" in e;
+	}
+
+	function getPositionX(e: Event) {
+		if (!isTouchEvent(e)) throw new Error("not a TouchEvent");
 		return e.touches[0].clientX;
 	}
 
