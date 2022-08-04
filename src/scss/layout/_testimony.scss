@@ -74,11 +74,19 @@
 
 	&__slide img {
 		max-width: 20%;
-		margin-top: -30px;
+		margin-top: -55px;
 		margin-bottom: 1rem;
 
+		// @include u.breakpoint-down(xlarge) {
+		// 	margin-top: -35px;
+		// }
+
+		@include u.breakpoint-down(large) {
+			margin-top: -35px;
+		}
+
 		@include u.breakpoint-down(medium) {
-			margin-top: -70px;
+			margin-top: -60px;
 		}
 
 		@include u.breakpoint-down(mobile) {

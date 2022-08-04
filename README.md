@@ -2,19 +2,7 @@
 
 This is a solution to the [Manage landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-- [Author](#author)
-
-## Overview
-
-### The challenge
+# The challenge
 
 Users should be able to:
 
@@ -25,14 +13,11 @@ Users should be able to:
   - The `input` field is empty
   - The email address is not formatted correctly
 
-### Links
+# Links
 
-- Solution URL: https://github.com/zhutaoping/manage-landing-page-master
 - Live Site URL: https://fmmanagelp.netlify.app/
 
-## My process
-
-### Built with
+# Built with
 
 - Semantic HTML5 markup
 - SCSS/Flexbox/CSS Grid
@@ -40,12 +25,12 @@ Users should be able to:
 - webpack
 - github
 
-### What I learned
+# What I learned
 
 Touch slider, window.matchMedia, etc.
 複習重點為 RWD, hamburger menu, form validation, SCSS, CSS grid 等等。
 
-## Author
+# Author
 
 - zhu taoping / 朱濤萍
 - Github https://github.com/zhutaoping
