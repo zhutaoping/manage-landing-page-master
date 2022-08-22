@@ -37,9 +37,9 @@ export function carousel() {
 		isDragging = false;
 		const movedBy = currentTranslate - prevTranslate;
 
-		if (movedBy < -100 && currentIndex < slides.length - 1) currentIndex += 1;
+		if (movedBy < -50 && currentIndex < slides.length - 1) currentIndex += 1;
 
-		if (movedBy > 100 && currentIndex > 0) currentIndex -= 1;
+		if (movedBy > 50 && currentIndex > 0) currentIndex -= 1;
 
 		setPositionByIndex();
 	}
